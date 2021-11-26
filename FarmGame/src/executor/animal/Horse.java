@@ -6,6 +6,11 @@ public class Horse extends Animal {
     
     private String color;
 
+    public Horse() {
+        super();
+        this.color = "Undefined";
+    }
+    
     public Horse(String name, Location location, int hungry, boolean sick, boolean clean, String color) {
         super(name, location, hungry, sick, clean);
         this.color = color;

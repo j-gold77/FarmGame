@@ -7,6 +7,11 @@ public class Person implements display.Displayable {
     private String name;
     private Location location;
 
+    public Person() {
+        this.name = "Unnamed";
+        this.location = null;
+    }
+    
     public Person(String name, Location location) {
         this.name = name;
         this.location = location;

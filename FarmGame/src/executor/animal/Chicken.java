@@ -6,6 +6,11 @@ public class Chicken extends Animal {
     
     private String size;
 
+    public Chicken() {
+        super();
+        this.size = "Undefined";
+    }
+    
     public Chicken(String name, Location location, int hungry, boolean sick, boolean clean, String size) {
         super(name, location, hungry, sick, clean);
         this.size = size;

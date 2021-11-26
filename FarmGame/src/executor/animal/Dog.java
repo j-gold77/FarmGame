@@ -7,6 +7,12 @@ public class Dog extends Animal {
     private String color;
     private Location guardedLocation;
 
+    public Dog() {
+        super();
+        this.color = "Undefined";
+        this.guardedLocation = null;
+    }
+    
     public Dog(String name, Location location, int hungry, boolean sick, boolean clean, String color, Location guardedLocation) {
         super(name, location, hungry, sick, clean);
         this.color = color;

@@ -6,6 +6,11 @@ public class Cow extends Animal {
     
     private boolean hasMilk;
 
+    public Cow() {
+        super();
+        this.hasMilk = true;
+    }
+    
     public Cow(String name, Location location, int hungry, boolean sick, boolean clean, boolean hasMilk) {
         super(name, location, hungry, sick, clean);
         this.hasMilk = hasMilk;

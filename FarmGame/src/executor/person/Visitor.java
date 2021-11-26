@@ -5,6 +5,11 @@ import executor.location.Location;
 public class Visitor extends Person {
     
     private int age;
+    
+    public Visitor() {
+        super();
+        this.age = 0;
+    }
 
     public Visitor(String name, Location location, int age) {
         super(name, location);

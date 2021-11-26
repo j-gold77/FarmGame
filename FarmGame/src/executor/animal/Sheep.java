@@ -6,6 +6,11 @@ public class Sheep extends Animal {
     
     private boolean thickWool;
 
+    public Sheep () {
+        super();
+        this.thickWool = false;
+    }
+    
     public Sheep(String name, Location location, int hungry, boolean sick, boolean clean, boolean thickWool) {
         super(name, location, hungry, sick, clean);
         this.thickWool = thickWool;

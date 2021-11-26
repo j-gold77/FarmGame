@@ -5,17 +5,25 @@ import java.util.ArrayList;
 
 public class Location implements display.Displayable {
     
-    private String name;
     private int filth;
     private ArrayList<Person> people;
 
-    public Location(String name, int filth) {
-        this.name = name;
+    public Location() {
+        this.filth = 0;
+    }
+    
+    public Location(int filth) {
         this.filth = filth;
     }
     
+    public Location(int filth, ArrayList<Person> people) {
+        this.filth = filth;
+        this.people = people;
+    }
+    
+    // Return classe name i.e barn, field, house
     public String getName() {
-        return name;
+        return this.getClass().getSimpleName();
     }
 
     public boolean isClean() {

@@ -10,6 +10,11 @@ public class Farmer extends Person {
     
     private boolean tired;
 
+    public Farmer() {
+        super();
+        this.tired = false;
+    }
+    
     public Farmer(String name, Location location, boolean tired) {
         super(name, location);
         this.tired = tired;

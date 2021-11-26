@@ -10,6 +10,22 @@ public abstract class Animal implements display.Displayable {
     private boolean sick;
     private boolean clean;
 
+    public Animal() {
+        this.name = "Unnamed";
+        this.location = null;
+        this.hungry = 0;
+        this.sick = false;
+        this.clean = true;
+    }
+    
+    public Animal(String name, Location location) {
+        this.name = name;
+        this.location = location;
+        this.hungry = 0;
+        this.sick = false;
+        this.clean = true;
+    }
+    
     public Animal(String name, Location location, int hungry, boolean sick, boolean clean) {
         this.name = name;
         this.location = location;
