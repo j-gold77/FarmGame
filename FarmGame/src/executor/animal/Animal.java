@@ -1,6 +1,6 @@
 package executor.animal;
 
-import executor.location.Location;
+import executor.Location;
 
 public abstract class Animal implements display.Displayable {
     
@@ -18,14 +18,6 @@ public abstract class Animal implements display.Displayable {
         this.clean = true;
     }
     
-    public Animal(String name, Location location) {
-        this.name = name;
-        this.location = location;
-        this.hungry = 0;
-        this.sick = false;
-        this.clean = true;
-    }
-    
     public Animal(String name, Location location, int hungry, boolean sick, boolean clean) {
         this.name = name;
         this.location = location;
@@ -37,7 +29,9 @@ public abstract class Animal implements display.Displayable {
     public abstract String speak();
     
     public void move(Location location) {
-        
+        this.location.getAnimals().remove(this);
+        location.getAnimals().add(this);
+        this.location = location;
     }
 
     public String getName() {

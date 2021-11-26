@@ -1,6 +1,6 @@
 package executor.animal;
 
-import executor.location.Location;
+import executor.Location;
 
 public class Cow extends Animal {
     
@@ -20,9 +20,17 @@ public class Cow extends Animal {
         return hasMilk;
     }
 
+    public boolean milk() {
+        if (hasMilk) {
+            this.hasMilk = false;
+            return true;
+        }
+        return false;
+    }
+    
     @Override
     public String speak() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "The cow moos!";
     }
     
 }
