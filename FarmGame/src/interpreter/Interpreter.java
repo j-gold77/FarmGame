@@ -25,7 +25,7 @@ public class Interpreter {
         
         // Find a farmer by their name
         if (level.findFarmer(words[1]) == null) {
-            System.out.println("Invalid Sentence: The second word of the sentence must be the name of a farmer that exists!");
+            System.out.println("Invalid Sentence: The second part of the sentence must be the name of a farmer that exists!");
             return;
         }
         
@@ -51,6 +51,9 @@ public class Interpreter {
             case "milks":
                 //
                 break;
+            default:
+                System.out.println("Invalid Sentence: The third part of the sentence must be an action (moves, speaks, nurses, feeds, cleans, milks)!");
+                return;
         }
     }
     
