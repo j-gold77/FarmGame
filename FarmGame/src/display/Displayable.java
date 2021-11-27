@@ -1,9 +1,7 @@
 package display;
 
 public interface Displayable {
-    
-    // returnStatus
     // String feedback
-    // returnFeedback
-    
+    public String returnStatus();
+    public String returnFeedback();
 }

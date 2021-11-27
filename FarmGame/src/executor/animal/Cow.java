@@ -11,8 +11,8 @@ public class Cow extends Animal {
         this.hasMilk = true;
     }
     
-    public Cow(String name, Location location, int hungry, boolean sick, boolean clean, boolean hasMilk) {
-        super(name, location, hungry, sick, clean);
+    public Cow(Location location, int hungry, boolean sick, boolean clean, boolean hasMilk) {
+        super(location, hungry, sick, clean);
         this.hasMilk = hasMilk;
     }
     
@@ -31,6 +31,20 @@ public class Cow extends Animal {
     @Override
     public String speak() {
         return "The cow moos!";
+    }
+
+    @Override
+    public String returnStatus() {
+        return "The cow is at the " + getLocation().getName() + ". It is "
+                + ((isHungry()) ? "hungry, " : "full, ")
+                + ((isSick()) ? "sick, " : "healthy, ")
+                + ((isClean()) ? "clean, " : "filthy, ")
+                + ((getHasMilk()) ? "and has milk." : "and does not have milk.");
+    }
+
+    @Override
+    public String returnFeedback() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

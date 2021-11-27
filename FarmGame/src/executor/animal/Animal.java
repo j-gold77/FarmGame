@@ -4,22 +4,19 @@ import executor.Location;
 
 public abstract class Animal implements display.Displayable {
     
-    private String name;
     private Location location;
     private int hungry;
     private boolean sick;
     private boolean clean;
 
     public Animal() {
-        this.name = "Unnamed";
         this.location = null;
         this.hungry = 0;
         this.sick = false;
         this.clean = true;
     }
     
-    public Animal(String name, Location location, int hungry, boolean sick, boolean clean) {
-        this.name = name;
+    public Animal(Location location, int hungry, boolean sick, boolean clean) {
         this.location = location;
         this.hungry = hungry;
         this.sick = sick;
@@ -32,10 +29,6 @@ public abstract class Animal implements display.Displayable {
         this.location.getAnimals().remove(this);
         location.getAnimals().add(this);
         this.location = location;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Location getLocation() {
@@ -52,10 +45,6 @@ public abstract class Animal implements display.Displayable {
 
     public boolean isClean() {
         return clean;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     // Returns true if could feed, false if not hungry
@@ -84,7 +73,5 @@ public abstract class Animal implements display.Displayable {
         }
         return false;
     }
-    
-    
     
 }
