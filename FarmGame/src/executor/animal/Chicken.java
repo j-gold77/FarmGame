@@ -25,9 +25,4 @@ public class Chicken extends Animal {
                 + ((isClean()) ? "and clean." : "and filthy.");
     }
 
-    @Override
-    public String returnFeedback() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

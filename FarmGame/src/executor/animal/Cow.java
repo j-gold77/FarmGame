@@ -42,9 +42,4 @@ public class Cow extends Animal {
                 + ((getHasMilk()) ? "and has milk." : "and does not have milk.");
     }
 
-    @Override
-    public String returnFeedback() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

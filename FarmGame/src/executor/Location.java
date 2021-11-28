@@ -54,19 +54,7 @@ public class Location implements display.Displayable {
 
     @Override
     public String returnStatus() {
-        String status = "The " + name + " is " + ((isClean()) ? "clean." : "filthy.");
-        for (Animal a : animals) {
-            status = status + a.returnStatus();
-        }
-        for (Farmer f : farmers) {
-            status = status + f.returnStatus();
-        }
-        return status;
-    }
-
-    @Override
-    public String returnFeedback() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "The " + name + " is " + ((isClean()) ? "clean." : "filthy.");
     }
 
 }

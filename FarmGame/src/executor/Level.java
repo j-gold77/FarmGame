@@ -8,6 +8,18 @@ public class Level {
     private ArrayList<Location> locations;
     private ArrayList<Farmer> farmers;
     private ArrayList<Animal> animals;
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public ArrayList<Farmer> getFarmers() {
+        return farmers;
+    }
+
+    public ArrayList<Animal> getAnimals() {
+        return animals;
+    }
     
     public void addLocation(Location location) {
         locations.add(location);
