@@ -6,15 +6,24 @@ import executor.Location;
 import executor.animal.Animal;
 
 public class Display {
-    public void displayStatus(Level level) {
-        for (Location l : level.getLocations()) {
-            System.out.println(l.returnStatus());
+
+    public static void displayStatus(Level level) {
+        System.out.println("---------------------------------");
+        if (level.getLocations() != null) {
+            for (Location l : level.getLocations()) {
+                System.out.println(l.returnStatus());
+            }
         }
-        for (Farmer f : level.getFarmers()) {
-            System.out.println(f.returnStatus());
+        if (level.getFarmers() != null) {
+            for (Farmer f : level.getFarmers()) {
+                System.out.println(f.returnStatus());
+            }
         }
-        for (Animal a : level.getAnimals()) {
-            System.out.println(a.returnStatus());
+        if (level.getAnimals() != null) {
+            for (Animal a : level.getAnimals()) {
+                System.out.println(a.returnStatus());
+            }
         }
+        System.out.println("---------------------------------");
     }
 }

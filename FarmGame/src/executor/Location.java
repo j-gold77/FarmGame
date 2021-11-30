@@ -19,6 +19,13 @@ public class Location implements display.Displayable {
         this.name = name;
         this.filth = 0;
     }
+    
+    public Location(String name, int filth) {
+        this.name = name;
+        this.filth = filth;
+        this.farmers = null;
+        this.animals = null;
+    }
 
     public Location(String name, int filth, ArrayList<Farmer> farmers, ArrayList<Animal> animals) {
         this.name = name;
@@ -39,8 +46,16 @@ public class Location implements display.Displayable {
         return farmers;
     }
 
+    public void addFarmer(Farmer farmer) {
+        farmers.add(farmer);
+    }
+    
     public ArrayList<Animal> getAnimals() {
         return animals;
+    }
+    
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
     }
 
     // Clean in decrements of 1 until filth is 0, returns whether could clean

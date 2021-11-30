@@ -16,8 +16,17 @@ public abstract class Animal implements display.Displayable {
         this.clean = true;
     }
     
+    public Animal(Location location) {
+        this.location = location;
+        //location.addAnimal(this);
+        this.hungry = 0;
+        this.sick = false;
+        this.clean = true;
+    }
+    
     public Animal(Location location, int hungry, boolean sick, boolean clean) {
         this.location = location;
+        //location.addAnimal(this);
         this.hungry = hungry;
         this.sick = sick;
         this.clean = clean;
@@ -27,16 +36,20 @@ public abstract class Animal implements display.Displayable {
     
     public void move(Location location) {
         this.location.getAnimals().remove(this);
-        location.getAnimals().add(this);
+        location.addAnimal(this);
         this.location = location;
     }
 
     public Location getLocation() {
         return location;
     }
+    
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public boolean isHungry() {
-        return hungry >= 0;
+        return hungry > 0;
     }
 
     public boolean isSick() {
@@ -58,7 +71,7 @@ public abstract class Animal implements display.Displayable {
 
     // Returns true if could nurse, false if not sick in the first place
     public boolean nurse() {
-        if (sick) {
+        if (isSick()) {
             this.sick = false;
             return true;
         }
@@ -67,8 +80,8 @@ public abstract class Animal implements display.Displayable {
 
     // Returns true if could clean, false if not unclean in the first place
     public boolean clean() {
-        if (sick) {
-            this.sick = false;
+        if (!isClean()) {
+            this.clean = true;
             return true;
         }
         return false;

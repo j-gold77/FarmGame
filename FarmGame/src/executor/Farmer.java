@@ -14,9 +14,15 @@ public class Farmer implements display.Displayable {
         this.location = null;
     }
 
+    public Farmer(String name) {
+        this.name = name;
+        this.location = null;
+    }
+    
     public Farmer(String name, Location location) {
         this.name = name;
         this.location = location;
+        //location.addFarmer(this);
     }
 
     public String getName() {
@@ -31,7 +37,7 @@ public class Farmer implements display.Displayable {
     public Feedback move(Location location) {
         if (this.location != location) {
             this.location.getFarmers().remove(this);
-            location.getFarmers().add(this);
+            location.addFarmer(this);
             this.location = location;
             return new Feedback(true, "Farmer" + name + " moved to the " + location.getName() + ".");
         }
@@ -68,7 +74,8 @@ public class Farmer implements display.Displayable {
     public Feedback feed(Animal animal) {
         if (this.location == animal.getLocation()) {
             if (animal.feed()) {
-                return new Feedback(true, "Farmer " + name + " fed the " + animal.getClass().getSimpleName() + ".");
+                return new Feedback(true, "Farmer " + name + " fed the " + animal.getClass().getSimpleName() + ".\nThe " + animal.getClass().getSimpleName() + " is "
+                        + ((animal.isHungry()) ? "not full yet!" : "now completely full!"));
             }
             return new Feedback(false, "Cannot feed the " + animal.getClass().getSimpleName() + ", it is already full!");
         }
@@ -101,7 +108,8 @@ public class Farmer implements display.Displayable {
     public Feedback clean(Location location) {
         if (this.location == location) {
             if (location.clean()) {
-                return new Feedback(true, "Farmer " + name + " clean the " + location.getName() + ".");
+                return new Feedback(true, "Farmer " + name + " clean the " + location.getName() + ".\nThe " + location.getName() + " is "
+                + ((location.isClean()) ? "now completely clean!" : "not clean enough yet!"));
             }
             return new Feedback(false, "Cannot clean the " + location.getName() + ", it is already clean!");
         }

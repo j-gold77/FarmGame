@@ -7,4 +7,6 @@ public class Feedback {
         this.success = success;
         this.message = message;
     }
+    // overload ==
+    // feedback.equals(feedback)
 }
