@@ -105,6 +105,9 @@ public class Interpreter {
                         System.out.println(farmer.speak());
                     }
                 }
+                else if (words.get(3).equals("while")) {
+                    
+                }
                 else {
                     System.out.println(farmer.speak());
                 }
@@ -178,11 +181,9 @@ public class Interpreter {
     }
 
     public static void feedbackProcessor(Feedback feedback, Level level) {
+        System.out.println(feedback.message);
         if (feedback.success) {
-            System.out.println(feedback.message);
             Display.displayStatus(level);
-        } else {
-            System.out.println(feedback.message);
         }
     }
 
