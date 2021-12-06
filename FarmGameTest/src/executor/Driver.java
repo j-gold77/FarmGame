@@ -79,9 +79,9 @@ public class Driver {
                 level.setPremise("Third test level");
                 Location farm3 = new Location("Farm");
                 Farmer farmer3 = new Farmer("John", farm3);
-                Pig pig3 = new Pig(farm3, 0, true, false);
-                Chicken chicken3 = new Chicken(farm3, 0, false, false);
-                Cow cow3 = new Cow(farm3, 1, true, true, true);
+                Pig pig3 = new Pig(farm3, 3, true, false);
+                Chicken chicken3 = new Chicken(farm3, 3, false, false);
+                Cow cow3 = new Cow(farm3, 3, true, true, true);
                 level.addLocation(farm3);
                 level.addFarmer(farmer3);
                 level.addAnimal(pig3);
