@@ -169,6 +169,17 @@ public class Interpreter {
                         } else
                             System.out.println(conditionWords.get(0) + " is not " + conditionWords.get(1) + ". So farmer john will not feed.");
                     }
+                    if (words.get(4).equals("while")) {
+                        conditionWords = new ArrayList(words.subList(5, words.size()));
+                        conditionFeedback = conditionChecker(conditionWords, level);
+                        animal = level.findAnimal(words.get(3));
+                        while (animal.isHungry()) {
+                            if (conditionFeedback.success & whileChecker(conditionWords, level)) {
+                                animal = level.findAnimal(words.get(3));
+                                feedbackProcessor(farmer.feed(animal), level);
+                            }
+                        }
+                    }
                 }
                 else {
 
@@ -312,8 +323,51 @@ public class Interpreter {
         return false;
     }
 
-    public static boolean whileChecker(ArrayList<String> condition, Level level){
+    public static boolean whileChecker(ArrayList<String> sentence, Level level) {
+
+
+        String animal = sentence.get(0);
+        String adjective = sentence.get(1);
+        switch (animal) {
+            case "chicken":
+            case "cow":
+            case "pig":
+                switch (adjective) {
+                    case "clean":
+                        if (level.findAnimal(sentence.get(0)).isClean()) {
+                            return true;
+                        }
+                        break;
+                    case "hungry":
+                        if (level.findAnimal(sentence.get(0)).isHungry()) {
+                            return true;
+                        }
+                        break;
+                    case "sick":
+                        if (level.findAnimal(sentence.get(0)).isSick()) {
+                            return true;
+                        }
+                        break;
+                    case "filthy":
+                        if (!level.findAnimal(sentence.get(0)).clean()) {
+                            return true;
+                        }
+                    case "full":
+                        if (!level.findAnimal(sentence.get(0)).isHungry()) {
+                            return true;
+                        }
+                    case "healthy":
+                        if (!level.findAnimal(sentence.get(0)).isSick()) {
+                            return true;
+                        }
+
+                }
+                break;
+            default:
+                System.out.println("Invalid Sentence: After the \"while\" must be an attribute of the animal(clean, filthy, healthy, sick, hungry or full)");
+                System.out.println("Also make sure you have the right animal(pig,cow or chicken)");
+
+        }
         return false;
     }
-    // WHILE CHECKER?
 }
