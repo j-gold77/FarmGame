@@ -3,19 +3,19 @@ package executor.animal;
 import executor.Location;
 
 public class Cow extends Animal {
-    
+
     private boolean hasMilk;
 
     public Cow() {
         super();
         this.hasMilk = true;
     }
-    
+
     public Cow(Location location, int hungry, boolean sick, boolean clean, boolean hasMilk) {
         super(location, hungry, sick, clean);
         this.hasMilk = hasMilk;
     }
-    
+
     public boolean getHasMilk() {
         return hasMilk;
     }
@@ -27,7 +27,7 @@ public class Cow extends Animal {
         }
         return false;
     }
-    
+
     @Override
     public String speak() {
         return "The cow moos!";
@@ -41,5 +41,15 @@ public class Cow extends Animal {
                 + ((isClean()) ? "clean, " : "filthy, ")
                 + ((getHasMilk()) ? "and has milk." : "and does not have milk.");
     }
+
+    public String picture(){
+        return " \\|/          (__)  " +
+                "\n      `\\------(oo)" +
+                "\n        ||    (__)" +
+                "\n        ||w--||     \\|/" +
+                "\n \\|/";
+    }
+
+
 
 }

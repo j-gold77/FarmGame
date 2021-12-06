@@ -3,7 +3,7 @@ package executor.animal;
 import executor.Location;
 
 public class Pig extends Animal {
-    
+
     public Pig() {
         super();
     }
@@ -24,5 +24,21 @@ public class Pig extends Animal {
                 + ((isSick()) ? "sick, " : "healthy, ")
                 + ((isClean()) ? "and clean." : "and filthy.");
     }
+
+    public String picture(){
+        return " &_--~- ,_" +
+                "\n {        \"," +
+                "\n (  )_ ,{ ,_@" +
+                "\n |/  {|\\{" +
+                "\n \"\"   \" \"";
+    }
+
+      /*
+    &_--~- ,_
+    {        ",
+    (  )_ ,{ ,_@
+    |/  {|\{
+    ""   " "
+     */
 
 }

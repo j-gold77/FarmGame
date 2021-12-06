@@ -25,4 +25,16 @@ public class Chicken extends Animal {
                 + ((isClean()) ? "and clean." : "and filthy.");
     }
 
+    public String picture() {
+        return "     __//" +
+                "\n    /.__.\\" +
+                "\n    \\ \\/ /" +
+                "\n '__/    \\" +
+                "\n  \\-      )" +
+                "\n   \\_____/" +
+                "\n_____|_|____" +
+                "\n     \" \"";
+
+    }
+
 }

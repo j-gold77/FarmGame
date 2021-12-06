@@ -5,9 +5,31 @@ import executor.Level;
 import executor.Location;
 import executor.animal.Animal;
 
+/**
+ * The type Display.
+ */
 public class Display {
 
+    /**
+     * Display status.
+     *
+     * @param level the level
+     */
+    public static void displayIntroduction(Level level) {
+        Teaching t = new Teaching(level);
+        Farmer john = new Farmer();
+        System.out.println(john.picture());
+        t.levelIntroduction();
+    }
+
+
+    /**
+     * Display status.
+     *
+     * @param level the level
+     */
     public static void displayStatus(Level level) {
+
         System.out.println("---------------------------------");
         if (level.getLocations() != null) {
             for (Location l : level.getLocations()) {
@@ -24,6 +46,10 @@ public class Display {
                 System.out.println(a.returnStatus());
             }
         }
+
         System.out.println("---------------------------------");
+
+
+
     }
 }
