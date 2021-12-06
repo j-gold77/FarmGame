@@ -12,6 +12,7 @@ as polymorphism, list manipulation, and conditional logic.
 Dependencies:
 This program is written in Java.
 Jupiter JUnit is the testing framework.
+Eclipse IDE was used to write the code, compile, and execute it.
 
 Instructions:
 To run this program, execute the provided executable jar file called "FarmGame.jar".
@@ -20,3 +21,11 @@ directory called "FarmGame".
 The test cases can also be executed through an IDE such as Eclipse, all the files that
 relate to testing end with the keyword "Test".
 If none of the above works, sample execution of each level is provided in .txt files.
+
+File Structure:
+All the source code is found inside "FarmGame/src"
+The main components of the program are seperated into their own Java packages, mainly:
+Display, Interpreter, Executor
+All files ending with "Test" are the classes used by JUnit and include the test cases.
+The Driver.java file is where the main function is, and where the level selection happens.
+The screenshots are found in the Screenshots folder.
