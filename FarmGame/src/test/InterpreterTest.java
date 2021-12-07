@@ -157,5 +157,42 @@ class InterpreterTest {
         Interpreter.interpretSentence(sentence,level);
         assertEquals("House", chris.getLocation().getName());
     }
+    
+    @Test
+	@DisplayName("Farmer cannot nurse an already healthy animal")
+	void IntegrationAnimalAlreadyHealthy() {
+		ArrayList<Location> locationList = new ArrayList<Location>();
+		ArrayList<Farmer> farmersList = new ArrayList<Farmer>();
+        ArrayList<Animal> animalsList = new ArrayList<Animal>();
+        Location barn = new Location("Barn", 0, farmersList, animalsList);
+		Farmer sam = new Farmer("Sam", barn);
+		Cow cow = new Cow(barn, 0, false, true, true);
+		animalsList.add(cow);
+		farmersList.add(sam);
+		locationList.add(barn);
+		String sentence = "Farmer Sam nurses to the Cow";
+		Level level = new Level(sentence, locationList, farmersList, animalsList);
+		Interpreter.interpretSentence(sentence,level);
+		assertEquals(false, cow.isSick());	
+	}
+	@Test
+	@DisplayName("Farmer should feed animal until it's not hungry")
+	void IntegrationAnimalHungry() {
+		ArrayList<Location> locationList = new ArrayList<Location>();
+		ArrayList<String> sentenceList = new ArrayList<String>();
+		ArrayList<Farmer> farmersList = new ArrayList<Farmer>();
+        ArrayList<Animal> animalsList = new ArrayList<Animal>();
+        Location barn = new Location("Barn", 0, farmersList, animalsList);
+		Farmer sam = new Farmer("Sam", barn);
+		Cow cow = new Cow(barn, 4, false, true, true);
+		animalsList.add(cow);
+		farmersList.add(sam);
+		locationList.add(barn);
+		String sentence = "Farmer Sam feeds the Cow while it is still hungry";
+		sentenceList.add(sentence);
+		Level level = new Level(sentence, locationList, farmersList, animalsList);
+		Interpreter.interpretSentence(sentence,level);
+		assertEquals("The animal was very hungry! The animal was fed 4 times.", outputStreamCaptor.toString().trim());	
+	}
 
 }
