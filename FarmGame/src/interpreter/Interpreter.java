@@ -30,13 +30,12 @@ public class Interpreter {
         ArrayList<String> words = new ArrayList(Arrays.asList(tempWords));
 
         // Remove extra words like "the" "of" "is" "going" "to"
-        ArrayList<String> uselessWords = new ArrayList(Arrays.asList("the", "of", "is", "to", "a", "in", "towards", "into", "it", "an", "by", "are", "really",
+        ArrayList<String> uselessWords = new ArrayList(Arrays.asList("the", "the", "of", "is", "to", "a", "in", "towards", "into", "it", "an", "by", "are", "really",
                 "very", "still", "with", "their", "his", "its", "him", "hers", "he", "she", "them", "for"));
         words.removeIf(uselessWords::contains);
-
         // Shortest valid sentence is 3 words long.
         if (words.size() < 3) {
-            System.out.println("Invalid Sentence: Sentences must be at least 3 meaningful words long!");
+            System.out.println("Invalid Sentence: Sentences must be at least 3 words long!");
             return;
         }
 
@@ -74,13 +73,20 @@ public class Interpreter {
             case "leads":
             case "herd":
             case "herds":
-            	if(words.size() < 5) {
-                    if(words.size() < 4) { // farmer john moves farm
+
+                animal = level.findAnimal(words.get(3));
+                if(words.get(words.size() - 1).equals("cow") | words.get(words.size() - 1).equals("pig") | words.get(words.size() - 1).equals("chicken")) {
+                    System.out.println("Invalid Sentence: You are moving and animal to a location. last words must be a location");
+                    return;
+
+                }
+                if(words.size() < 5) {
+
                         // Takes a location argument only, or an animal and location argument, calls farmer.move(location) or farmer.move(animal, location)
                         // Find a location by its name
                         location = level.findLocation(words.get(3));
                         // Find an animal by its class type
-                        animal = level.findAnimal(words.get(3));
+
                         // See if argument is a location first
                         if (location != null) {
                             feedbackProcessor(farmer.move(location), level);
@@ -99,10 +105,6 @@ public class Interpreter {
                             System.out.println("Invalid Sentence: The fourth part of the sentence must be the type of an animal that exists (Pig, Chicken, Cow), or the name of a location!");
                         }
                     }
-                    else {
-                        System.out.println("Invalid Sentence: The fourth part of the sentence must be the name of a location!");
-                    }
-                }
                 else{
                     location = level.findLocation(words.get(4));
                     animal = level.findAnimal(words.get(3));
@@ -120,6 +122,7 @@ public class Interpreter {
                     }
 
                 }
+                break;
             case "speaks":
             case "talks":
             case "says":
@@ -128,27 +131,26 @@ public class Interpreter {
             case "talk":
                 // Takes no arguments, calls farmer.speak()
                 //checks if using the if keyword
-            	if (words.size() > 3) {
-	                if (words.get(3).equals("if")) {
-	                    animal = level.findAnimal(words.get(4));
-	                    //if animal doesn't exist, exit to main game
-	                    if(animal== null){
-	                        System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
-	                        return;
-	                    }
-	
-	                    conditionWords = new ArrayList(words.subList(4, words.size()));
-	                    conditionFeedback = conditionChecker(conditionWords, level);
-	                    System.out.println(conditionFeedback.message);
-	                    //if the condition checker is a success and the if checker returns true
-	                    if (conditionFeedback.success & ifChecker(conditionWords,level)) {
-	                        System.out.println(farmer.speak());
-	                    }
-	                    else
-	                        //if the return is false
-	                        System.out.println(conditionWords.get(0) + " Is not " + conditionWords.get(1) + ". So farmer john will not speak.");
-	                }
-            	}
+                if (words.get(3).equals("if")) {
+                    animal = level.findAnimal(words.get(4));
+                    //if animal doesn't exist, exit to main game
+                    if(animal== null){
+                        System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
+                        return;
+                    }
+
+                    conditionWords = new ArrayList(words.subList(4, words.size()));
+                    conditionFeedback = conditionChecker(conditionWords, level);
+                    System.out.println(conditionFeedback.message);
+                    //if the condition checker is a success and the if checker returns true
+                    if (conditionFeedback.success & ifChecker(conditionWords,level)) {
+                        System.out.println(farmer.speak());
+                    }
+                    else
+                        //if the return is false
+                        System.out.println(conditionWords.get(0) + " Is not " + conditionWords.get(1) + ". So farmer john will not speak.");
+                }
+
                 //if there is if keyword
                 else {
                     System.out.println(farmer.speak());
@@ -177,6 +179,7 @@ public class Interpreter {
                         conditionFeedback = conditionChecker(conditionWords, level);
                         //condition and if checker only happens when true
                         if (conditionFeedback.success & ifChecker(conditionWords, level)) {
+                            System.out.println("here");
                             animal = level.findAnimal(words.get(3));
                             feedbackProcessor(farmer.nurse(animal), level);
                         }
@@ -230,7 +233,7 @@ public class Interpreter {
 
                         int count = 0;
                         animal = level.findAnimal(words.get(5));
-                        //if animal doesn't exist in the second half of the sentence
+                        //if animal doesn;t exist in the second half of the sentence
                         if (animal == null) {
                             System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
                         }
@@ -258,7 +261,6 @@ public class Interpreter {
                         }
 
                         System.out.println("The animal was very hungry! The animal was fed " + count + " times.");
-                        Display.displayStatus(level);
                     }
                 }
                 //happens when the word is shorter than 5
@@ -431,6 +433,7 @@ public class Interpreter {
      * @return the boolean
      */
     public static boolean whileChecker(ArrayList<String> sentence, Level level) {
+
 
         String animal = sentence.get(0);
         String adjective = sentence.get(1);
