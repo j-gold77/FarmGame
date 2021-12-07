@@ -79,7 +79,6 @@ public class Driver {
                     
                     // Add location to level
                     level1.addLocation(barn);
-                    level1.addLocation(farm);
                     
                     // Add objects to barn
                     barn.addFarmer(farmer);
