@@ -120,14 +120,6 @@ public class Location implements display.Displayable {
         this.filth = filth;
     }
 
-    public void setFarmers(Farmer farmers) {
-        this.farmers.add(farmers);
-    }
-
-    public void setAnimals(Animal animals) {
-        this.animals.add(animals);
-    }
-
     /**
      * Add animal.
      *

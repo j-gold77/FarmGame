@@ -86,14 +86,19 @@ public class Interpreter {
                     feedbackProcessor(farmer.move(location), level);
                 } // See if argument is an animal next
                 else if (animal != null) {
-                    location = level.findLocation(words.get(4));
-                    // See if second argument is a location
-                    if (location != null) {
-                        feedbackProcessor(farmer.move(animal, location), level);
-                    }
-                    else {
-                        System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
-                    }
+                	if (words.size() > 4) {
+	                    location = level.findLocation(words.get(4));
+	                    // See if second argument is a location
+	                    if (location != null) {
+	                        feedbackProcessor(farmer.move(animal, location), level);
+	                    }
+	                    else {
+	                        System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
+	                    }
+                	}
+                	else {
+                		System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
+                	}   
                 } // Argument is neither
                 else {
                     System.out.println("Invalid Sentence: The fourth part of the sentence must be the type of an animal that exists (Pig, Chicken, Cow), or the name of a location!");
@@ -209,7 +214,7 @@ public class Interpreter {
 
                         int count = 0;
                         animal = level.findAnimal(words.get(5));
-                        //if animal doesn;t exist in the second half of the sentence
+                        //if animal doesn't exist in the second half of the sentence
                         if (animal == null) {
                             System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
                         }
@@ -410,7 +415,6 @@ public class Interpreter {
      * @return the boolean
      */
     public static boolean whileChecker(ArrayList<String> sentence, Level level) {
-
 
         String animal = sentence.get(0);
         String adjective = sentence.get(1);

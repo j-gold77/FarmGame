@@ -34,15 +34,17 @@ public class Driver {
 
         // Create level
 
-
-
-
         Scanner input = new Scanner(System.in);
         String levelNum = "";
 
+        /**
+         * Each case is a level.
+         * All cases function similarly, there will only be comments for case 1
+         */
+        
         while (!levelNum.equals("0")) {
 
-            //level selection
+            // Level selection
             System.out.println("Select a level by writing its number:");
             System.out.println("Level 1: Teaches the importance of object oriented programming");
             System.out.println("Level 2: Teaches IF conditions with objects");
@@ -53,28 +55,48 @@ public class Driver {
             levelNum = input.nextLine();
             switch (levelNum) {
                 case "1":
+                	
+                	// Empty the locations
                     locations.clear();
                     farmers.clear();
                     animals.clear();
+                    
+                    // Create a level
                     Level level1 = new Level(premise, locations, farmers, animals);
                     level1.setPremise("First level");
+                    
+                    // Create locations
                     Location barn = new Location("Barn");
                     Location farm = new Location("Farm");
+                    
+                    // Create farmer
                     Farmer farmer = new Farmer("John", barn);
+                    
+                    // Create animals
                     Pig pig = new Pig(barn, 2, true, false);
                     Chicken chicken = new Chicken(barn, 1, true, false);
                     Cow cow = new Cow(barn, 0, false, true, true);
+                    
+                    // Add location to level
                     level1.addLocation(barn);
-                    barn.setFarmers(farmer);
-                    barn.setAnimals(pig);
-                    barn.setAnimals(chicken);
-                    barn.setAnimals(cow);
+                    
+                    // Add objects to barn
+                    barn.addFarmer(farmer);
+                    barn.addAnimal(pig);
+                    barn.addAnimal(chicken);
+                    barn.addAnimal(cow);
+                    
+                    // Add elements to level
                     level1.addLocation(farm);
                     level1.addFarmer(farmer);
                     level1.addAnimal(pig);
                     level1.addAnimal(chicken);
                     level1.addAnimal(cow);
+                    
+                    // Print out level's premise
                     System.out.println(level1.getPremise());
+                    
+                    // Print out level's teaching paragraph
                     Teaching t = new Teaching(level1);
                     String levelPremise = t.getLevelPremise();
                     Display.displayIntroduction(level1);
@@ -107,10 +129,10 @@ public class Driver {
                     level2.addAnimal(pig2);
                     level2.addAnimal(chicken2);
                     level2.addAnimal(cow2);
-                    farm2.setFarmers(farmer2);
-                    farm2.setAnimals(pig2);
-                    farm2.setAnimals(chicken2);
-                    farm2.setAnimals(cow2);
+                    farm2.addFarmer(farmer2);
+                    farm2.addAnimal(pig2);
+                    farm2.addAnimal(chicken2);
+                    farm2.addAnimal(cow2);
                     System.out.println(level2.getPremise());
                     Teaching t2 = new Teaching(level2);
                     String levelPremise2 = t2.getLevelPremise();
@@ -144,10 +166,10 @@ public class Driver {
                     level3.addAnimal(pig3);
                     level3.addAnimal(chicken3);
                     level3.addAnimal(cow3);
-                    farm3.setFarmers(farmer3);
-                    farm3.setAnimals(pig3);
-                    farm3.setAnimals(chicken3);
-                    farm3.setAnimals(cow3);
+                    farm3.addFarmer(farmer3);
+                    farm3.addAnimal(pig3);
+                    farm3.addAnimal(chicken3);
+                    farm3.addAnimal(cow3);
                     System.out.println(level3.getPremise());
                     Teaching t3 = new Teaching(level3);
                     String levelPremise3 = t3.getLevelPremise();
@@ -176,10 +198,10 @@ public class Driver {
                     Pig pig4 = new Pig(farm4, 3, true, false);
                     Chicken chicken4 = new Chicken(farm4, 3, false, false);
                     Cow cow4 = new Cow(farm4, 3, true, true, true);
-                    farm4.setFarmers(farmer4);
-                    farm4.setAnimals(pig4);
-                    farm4.setAnimals(chicken4);
-                    farm4.setAnimals(cow4);
+                    farm4.addFarmer(farmer4);
+                    farm4.addAnimal(pig4);
+                    farm4.addAnimal(chicken4);
+                    farm4.addAnimal(cow4);
                     level4.addLocation(farm4);
                     level4.addFarmer(farmer4);
                     level4.addAnimal(pig4);
