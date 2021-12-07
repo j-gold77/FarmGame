@@ -7,7 +7,7 @@ To teach young kids how to program in an object-oriented environment.
 The usage of Java will help relate object-oriented concepts to the end user
 through our coding simulation. Most of the architecture in our program is based
 on the basics of OOP principles, the ones the user is intended to learn, such
-as polymorphism, list manipulation, and conditional logic.
+as list manipulation and conditional logic.
 --------------------------------------------------------------------------------------------
 Dependencies:
 This program is written in Java.
@@ -17,10 +17,13 @@ Eclipse IDE was used to write the code, compile, and execute it.
 Instructions:
 To run this program, execute the provided executable jar file called "FarmGame.jar".
 If the above does not work, use an IDE such as Eclipse and create a new project in the
-directory called "FarmGame".
+directory called "FarmGame". Then run the Driver.java file found in FarmGame/src/executor/driver.java
 The test cases can also be executed through an IDE such as Eclipse, all the files that
 relate to testing can be found in the FarmGame/src/test folder.
-If none of the above works, sample execution of each level is provided in .txt files.
+If none of the above works, sample execution of each level is provided in .txt files,
+found in the Sample Output folder.
+Most of the game functionality and programming principles are demonstrated and tested
+in the levels found in the sample output.
 --------------------------------------------------------------------------------------------
 File Structure:
 All the source code is found inside "FarmGame/src"
