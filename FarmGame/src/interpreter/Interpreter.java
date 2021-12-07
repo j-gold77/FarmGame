@@ -74,34 +74,52 @@ public class Interpreter {
             case "leads":
             case "herd":
             case "herds":
-                // Takes a location argument only, or an animal and location argument, calls farmer.move(location) or farmer.move(animal, location)
-                // Find a location by its name
-                location = level.findLocation(words.get(3));
-                // Find an animal by its class type
-                animal = level.findAnimal(words.get(3));
-                // See if argument is a location first
-                if (location != null) {
-                    feedbackProcessor(farmer.move(location), level);
-                } // See if argument is an animal next
-                else if (animal != null) {
-                	if (words.size() > 4) {
-	                    location = level.findLocation(words.get(4));
-	                    // See if second argument is a location
-	                    if (location != null) {
-	                        feedbackProcessor(farmer.move(animal, location), level);
-	                    }
-	                    else {
-	                        System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
-	                    }
-                	}
-                	else {
-                		System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
-                	}   
-                } // Argument is neither
-                else {
-                    System.out.println("Invalid Sentence: The fourth part of the sentence must be the type of an animal that exists (Pig, Chicken, Cow), or the name of a location!");
+            	if(words.size() < 5) {
+                    if(words.size() < 4) { // farmer john moves farm
+                        // Takes a location argument only, or an animal and location argument, calls farmer.move(location) or farmer.move(animal, location)
+                        // Find a location by its name
+                        location = level.findLocation(words.get(3));
+                        // Find an animal by its class type
+                        animal = level.findAnimal(words.get(3));
+                        // See if argument is a location first
+                        if (location != null) {
+                            feedbackProcessor(farmer.move(location), level);
+                        } // See if argument is an animal next
+                        else if (animal != null) {
+                            location = level.findLocation(words.get(4));
+                            // See if second argument is a location
+                            if (location != null) {
+                                feedbackProcessor(farmer.move(animal, location), level);
+                            } else {
+                                System.out.println("Invalid Sentence: The fifth part of the sentence must be the name of a location!");
+                            }
+
+                        } // Argument is neither
+                        else {
+                            System.out.println("Invalid Sentence: The fourth part of the sentence must be the type of an animal that exists (Pig, Chicken, Cow), or the name of a location!");
+                        }
+                    }
+                    else {
+                        System.out.println("Invalid Sentence: The fourth part of the sentence must be the name of a location!");
+                    }
                 }
-                break;
+                else{
+                    location = level.findLocation(words.get(4));
+                    animal = level.findAnimal(words.get(3));
+                    if(animal.getLocation()==location){
+                        System.out.println("The " + animal.getClass().getSimpleName() + " is already in this location");
+                        return;
+                    }
+
+                    if(location != null & animal !=null){
+                        feedbackProcessor(farmer.move(animal,location),level);
+                    }
+
+                    else {
+                        System.out.println("Invalid Sentence: The fourth part of the sentence must be the type of an animal that exists (Pig, Chicken, Cow), or the name of a location!");
+                    }
+
+                }
             case "speaks":
             case "talks":
             case "says":

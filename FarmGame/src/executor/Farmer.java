@@ -86,13 +86,12 @@ public class Farmer implements display.Displayable {
      */
 // Farmer moves animal, returns false if can't move
     public Feedback move(Animal animal, Location location) {
-        if (this.location != location) {
-            if (this.location != animal.getLocation()) {
-                return new Feedback(true, "Farmer " + name + " moved the " + animal.getClass().getSimpleName() + " to the " + location.getName() + "."+ "\n" + animal.picture());
-            }
-            return new Feedback(false, "The farmer is not in the same location as the animal, cannot move the animal!");
+        if (this.location == animal.getLocation()) {
+            animal.setLocation(location);
+            return new Feedback(true, "Farmer " + name + " moved the " + animal.getClass().getSimpleName() + " to the " + location.getName() + "."+ "\n" + animal.picture());
         }
-        return new Feedback(false, "Source and Target locations are the same, farmer cannot move the animal!");
+        return new Feedback(false, "The farmer is not in the same location as the animal, cannot move the animal!");
+
     }
 
     /**
