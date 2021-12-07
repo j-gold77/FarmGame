@@ -48,7 +48,7 @@ public class Driver {
             System.out.println("Level 2: Teaches IF conditions with objects");
             System.out.println("Level 3: Teaches while conditions with objects");
             System.out.println("Level 4: Brings together all of what we learned");
-            System.out.println("Press 0: to exist the game");
+            System.out.println("Press 0: to exit the game");
             System.out.println("User input: ");
             levelNum = input.nextLine();
             switch (levelNum) {
@@ -57,7 +57,7 @@ public class Driver {
                     farmers.clear();
                     animals.clear();
                     Level level1 = new Level(premise, locations, farmers, animals);
-                    level1.setPremise("First test level");
+                    level1.setPremise("First level");
                     Location barn = new Location("Barn");
                     Location farm = new Location("Farm");
                     Farmer farmer = new Farmer("John", barn);
@@ -81,10 +81,13 @@ public class Driver {
                     Display.displayStatus(level1);
 
                     // Input sentences until level is complete (objective met)
-                    String sentence;
+                    String sentence ;
                     while (!level1.levelOneObjective()) {
-                        System.out.println("User input: ");
+                        System.out.println("User input (type 0 to exit the level): ");
                         sentence = input.nextLine();
+                        if (sentence.equals("0")) {
+                        	break;
+                        }
                         Interpreter.interpretSentence(sentence, level1);
                     }
                     break;
@@ -93,7 +96,7 @@ public class Driver {
                     farmers.clear();
                     animals.clear();
                     Level level2 = new Level(premise, locations, farmers, animals);
-                    level2.setPremise("Second test level");
+                    level2.setPremise("Second level");
                     Location farm2 = new Location("Farm");
                     Farmer farmer2 = new Farmer("John", farm2);
                     Pig pig2 = new Pig(farm2, 0, true, false);
@@ -117,8 +120,11 @@ public class Driver {
                     // Input sentences until level is complete (objective met)
                     String sentence2;
                     while (!level2.levelTwoObjective()) {
-                        System.out.println("User input: ");
+                    	System.out.println("User input (type 0 to exit the level): ");
                         sentence2 = input.nextLine();
+                        if (sentence2.equals("0")) {
+                        	break;
+                        }
                         Interpreter.interpretSentence(sentence2, level2);
                     }
                     break;
@@ -127,7 +133,7 @@ public class Driver {
                     farmers.clear();
                     animals.clear();
                     Level level3 = new Level(premise, locations, farmers, animals);
-                    level3.setPremise("Third test level");
+                    level3.setPremise("Third level");
                     Location farm3 = new Location("Farm");
                     Farmer farmer3 = new Farmer("John", farm3);
                     Pig pig3 = new Pig(farm3, 0, true, false);
@@ -151,8 +157,11 @@ public class Driver {
                     // Input sentences until level is complete (objective met)
                     String sentence3;
                     while (!level3.levelThreeObjective()) {
-                        System.out.println("User input: ");
+                    	System.out.println("User input (type 0 to exit the level): ");
                         sentence3 = input.nextLine();
+                        if (sentence3.equals("0")) {
+                        	break;
+                        }
                         Interpreter.interpretSentence(sentence3, level3);
                     }
                     break;
@@ -161,7 +170,7 @@ public class Driver {
                     farmers.clear();
                     animals.clear();
                     Level level4 = new Level(premise, locations, farmers, animals);
-                    level4.setPremise("Third test level");
+                    level4.setPremise("Fourth level");
                     Location farm4 = new Location("Farm");
                     Farmer farmer4 = new Farmer("John", farm4);
                     Pig pig4 = new Pig(farm4, 3, true, false);
@@ -183,10 +192,13 @@ public class Driver {
                     Display.displayStatus(level4);
 
                     // Input sentences until level is complete (objective met)
-                    String sentence4 = "PlaceHolder";
-                    while (!sentence4.equals("0")) {
-                        System.out.println("User input: ");
+                    String sentence4;
+                    while (true) {
+                    	System.out.println("User input (type 0 to exit the level): ");
                         sentence4 = input.nextLine();
+                        if (sentence4.equals("0")) {
+                        	break;
+                        }
                         Interpreter.interpretSentence(sentence4, level4);
                     }
                     break;

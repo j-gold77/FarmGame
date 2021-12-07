@@ -1,0 +1,117 @@
+Welcome to the Farm Game!
+The purpose of this game is to teach children how to code.
+
+Select a level by writing its number:
+Level 1: Teaches the importance of object oriented programming
+Level 2: Teaches IF conditions with objects
+Level 3: Teaches while conditions with objects
+Level 4: Brings together all of what we learned
+Press 0: to exit the game
+User input: 
+2
+Second level
+    .------\ /------.
+    |       -       |
+    |               |
+    |               |
+ _______________________
+ ===========.===========
+   / ~~~~~     ~~~~~ \
+  /|     |     |      \
+  W   ---  / \  ---   W
+  \.      |o o|      ./
+   |                 |
+   \    #########    /
+    \  ## ----- ##  /
+     \##         ##/
+      \_____v_____/
+Welcome to the second Level.
+Here we will begin teaching about conditions statements
+The first condition statement we will begin using is an IF statement
+An IF statement can only be executed if the condition given is TRUE
+IF 4>2 then something will happen.
+We can use ELSE after the IF statement to execute something else if the conditions is not true
+In our programs since we are using Objects. We can say IF the pig is clean THEN it moves to the barn
+If the pig is not clean then the condition will be FALSE and move to the else condition
+Why don't you give it a try now and try to clean the animals with IF statements
+
+
+I will now explain some rules for this level.
+Rule 1: All sentences must begin with "Farmer John".
+Rule 2: All sentences must be at least 3 meaningful words long.
+Rule 3: After the if keyword you must repeat the animal you are using (ex: farmer john cleans the pig if the pig is clean).
+Rule 4: The goal for this level is to make sure all the animals are full, clean and healthy with if statements.
+Rule 5: Have fun!.
+TIP: Don't forget to milk the cow!
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, sick, and filthy.
+The chicken is at the Farm. It is full, healthy, and filthy.
+The cow is at the Farm. It is hungry, sick, clean, and has milk.
+---------------------------------
+User input (type 0 to exit the level): 
+Feed the pig
+Invalid Sentence: Sentences must be at least 3 meaningful words long!
+User input (type 0 to exit the level): 
+Farmer John feeds the Donkey.
+Invalid Sentence: The third part of the sentence must be the type of an animal that exists! (Pig, Chicken, Cow)
+User input (type 0 to exit the level): 
+Farmer john feeds the cow if the donkey is full!
+invalid sentence. The word after "if" must be an animal. Remember code is very specific.
+User input (type 0 to exit the level): 
+Farmer john feeds the cow if the cow is full!
+cow is not full. So farmer john will not feed.
+User input (type 0 to exit the level): 
+Farmer john feeds the cow if the cow is hungry.
+Farmer John fed the Cow.
+The Cow is now completely full!
+ \|/          (__)  
+      `\------(oo)
+        ||    (__)
+        ||w--||     \|/
+ \|/
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, sick, and filthy.
+The chicken is at the Farm. It is full, healthy, and filthy.
+The cow is at the Farm. It is full, sick, clean, and has milk.
+---------------------------------
+User input (type 0 to exit the level): 
+Farmer milks the cow
+Invalid Sentence: The second part of the sentence must be the name of a farmer that exists!
+User input (type 0 to exit the level): 
+Farmer John milks the cow
+Farmer John milked the cow. \|/          (__)  
+      `\------(oo)
+        ||    (__)
+        ||w--||     \|/
+ \|/
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, sick, and filthy.
+The chicken is at the Farm. It is full, healthy, and filthy.
+The cow is at the Farm. It is full, sick, clean, and does not have milk.
+---------------------------------
+User input (type 0 to exit the level): 
+Farmer John heals the pig if it is full.
+invalid sentence. The word after "if" must be an animal. Remember code is very specific.
+User input (type 0 to exit the level): 
+Farmer john heals the pig
+Farmer John nursed the Pig.
+ &_--~- ,_
+ {        ",
+ (  )_ ,{ ,_@
+ |/  {|\{
+ ""   " "
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, healthy, and filthy.
+The chicken is at the Farm. It is full, healthy, and filthy.
+The cow is at the Farm. It is full, sick, clean, and does not have milk.
+---------------------------------
+User input (type 0 to exit the level): 
+0

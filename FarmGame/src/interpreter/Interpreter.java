@@ -38,7 +38,7 @@ public class Interpreter {
 
         // Shortest valid sentence is 3 words long.
         if (words.size() < 3) {
-            System.out.println("Invalid Sentence: Sentences must be at least 3 words long!");
+            System.out.println("Invalid Sentence: Sentences must be at least 3 meaningful words long!");
             return;
         }
 
@@ -107,26 +107,27 @@ public class Interpreter {
             case "talk":
                 // Takes no arguments, calls farmer.speak()
                 //checks if using the if keyword
-                if (words.get(3).equals("if")) {
-                    animal = level.findAnimal(words.get(4));
-                    //if animal doesn't exist, exit to main game
-                    if(animal== null){
-                        System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
-                        return;
-                    }
-
-                    conditionWords = new ArrayList(words.subList(4, words.size()));
-                    conditionFeedback = conditionChecker(conditionWords, level);
-                    System.out.println(conditionFeedback.message);
-                    //if the condition checker is a success and the if checker returns true
-                    if (conditionFeedback.success & ifChecker(conditionWords,level)) {
-                        System.out.println(farmer.speak());
-                    }
-                    else
-                        //if the return is false
-                        System.out.println(conditionWords.get(0) + " Is not " + conditionWords.get(1) + ". So farmer john will not speak.");
-                }
-
+            	if (words.size() > 3) {
+	                if (words.get(3).equals("if")) {
+	                    animal = level.findAnimal(words.get(4));
+	                    //if animal doesn't exist, exit to main game
+	                    if(animal== null){
+	                        System.out.println("invalid sentence. The word after \"if\" must be an animal. Remember code is very specific.");
+	                        return;
+	                    }
+	
+	                    conditionWords = new ArrayList(words.subList(4, words.size()));
+	                    conditionFeedback = conditionChecker(conditionWords, level);
+	                    System.out.println(conditionFeedback.message);
+	                    //if the condition checker is a success and the if checker returns true
+	                    if (conditionFeedback.success & ifChecker(conditionWords,level)) {
+	                        System.out.println(farmer.speak());
+	                    }
+	                    else
+	                        //if the return is false
+	                        System.out.println(conditionWords.get(0) + " Is not " + conditionWords.get(1) + ". So farmer john will not speak.");
+	                }
+            	}
                 //if there is if keyword
                 else {
                     System.out.println(farmer.speak());
@@ -236,6 +237,7 @@ public class Interpreter {
                         }
 
                         System.out.println("The animal was very hungry! The animal was fed " + count + " times.");
+                        Display.displayStatus(level);
                     }
                 }
                 //happens when the word is shorter than 5

@@ -55,8 +55,8 @@ public class Teaching {
     public void levelIntroduction(){
 
         switch(getLevelPremise()){
-            case "First test level":
-                System.out.println("Welcome to the First Test Level. Get ready to have fun with programming" +
+            case "First level":
+                System.out.println("Welcome to the First Level. Get ready to have fun with programming" +
                         " With our amazing barn game!!");
                 System.out.println("My name is Farmer John. I will be your guide through out this lesson.");
                 System.out.println("During this level we are going to learn all about Object Oriented programming.");
@@ -68,8 +68,8 @@ public class Teaching {
                 System.out.println("Your goal for this level is to make sure all the animals objects are clean!");
                 rulesLevel1();
                 break;
-            case "Second test level":
-                System.out.println("Welcome to the second Test Level.");
+            case "Second level":
+                System.out.println("Welcome to the second Level.");
                 System.out.println("Here we will begin teaching about conditions statements");
                 System.out.println("The first condition statement we will begin using is an IF statement");
                 System.out.println("An IF statement can only be executed if the condition given is TRUE");
@@ -80,8 +80,8 @@ public class Teaching {
                 System.out.println("Why don't you give it a try now and try to clean the animals with IF statements");
                 rulesLevel2();
                 break;
-            case "Third test level":
-                System.out.println("Welcome to the third test level.");
+            case "Third level":
+                System.out.println("Welcome to the third level.");
                 System.out.println("Here we will begin teaching about the second condition statement, the WHILE statement.");
                 System.out.println("WHILE functions similar to the IF statement where it will only execute if the statement is true.");
                 System.out.println("The fundamental difference is the while condition will keep going until the statement becomes false");
@@ -91,8 +91,8 @@ public class Teaching {
                 System.out.println("I think we are ready to give this a try.");
                 rulesLevel3();
                 break;
-            case "Fourth test level":
-                System.out.println("Welcome to the fourth test level.");
+            case "Fourth level":
+                System.out.println("Welcome to the fourth level.");
                 System.out.println("Wow we have sure learned a lot today about coding.");
                 System.out.println("This level is just an interactive sandbox.");
                 System.out.println("you may use any of the statements you have learned from the previous levels.");
@@ -108,7 +108,7 @@ public class Teaching {
     public void rulesLevel1(){
         System.out.println("\n\nBefore we begin I must tell you about some rules to this program.");
         System.out.println("All code follows rules. If you deviate from the rules the code may not run as intended.");
-        System.out.println("Rule 1: All sentences must begin with the Object \"Farmer John\".");
+        System.out.println("Rule 1: All sentences must begin with \"Farmer John\".");
         System.out.println("Rule 2: All sentences must be at least 3 meaningful words long.");
         System.out.println("Rule 3: The goal for this level is to clean all animals, But you can feed them, move them and nurse them as much as you want before level ends.");
         System.out.println("Rule 4: Have fun!.");
@@ -120,7 +120,7 @@ public class Teaching {
      */
     public void rulesLevel2(){
         System.out.println("\n\nI will now explain some rules for this level.");
-        System.out.println("Rule 1: All sentences must begin with the Object \"Farmer John\".");
+        System.out.println("Rule 1: All sentences must begin with \"Farmer John\".");
         System.out.println("Rule 2: All sentences must be at least 3 meaningful words long.");
         System.out.println("Rule 3: After the if keyword you must repeat the animal you are using (ex: farmer john cleans the pig if the pig is clean).");
         System.out.println("Rule 4: The goal for this level is to make sure all the animals are full, clean and healthy with if statements.");
@@ -133,7 +133,7 @@ public class Teaching {
      */
     public void rulesLevel3(){
         System.out.println("\n\nI will now explain some rules for this level.");
-        System.out.println("Rule 1: All sentences must begin with the Object \"Farmer John\".");
+        System.out.println("Rule 1: All sentences must begin with \"Farmer John\".");
         System.out.println("Rule 2: All sentences must be at least 3 meaningful words long.");
         System.out.println("Rule 3: After the while keyword you must repeat the animal you are using (ex: farmer john cleans the pig while the pig is clean).");
         System.out.println("Rule 4: The goal for this level is to make sure all the animals are full using while statements.");
@@ -145,7 +145,7 @@ public class Teaching {
      */
     public void rulesLevel4(){
         System.out.println("\n\nI will now explain some rules for this level.");
-        System.out.println("Rule 1: All sentences must begin with the Object \"Farmer John\".");
+        System.out.println("Rule 1: All sentences must begin with \"Farmer John\".");
         System.out.println("Rule 2: All sentences must be at least 3 meaningful words long.");
         System.out.println("Rule 3: Farmer john cannot interact with the animal until he is in the same location of the animal");
         System.out.println("Rule 4: After the if keyword you must repeat the animal you are using (ex: farmer john cleans the pig if the pig is clean).");

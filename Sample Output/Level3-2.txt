@@ -1,0 +1,101 @@
+Welcome to the Farm Game!
+The purpose of this game is to teach children how to code.
+
+Select a level by writing its number:
+Level 1: Teaches the importance of object oriented programming
+Level 2: Teaches IF conditions with objects
+Level 3: Teaches while conditions with objects
+Level 4: Brings together all of what we learned
+Press 0: to exit the game
+User input: 
+3
+Third level
+    .------\ /------.
+    |       -       |
+    |               |
+    |               |
+ _______________________
+ ===========.===========
+   / ~~~~~     ~~~~~ \
+  /|     |     |      \
+  W   ---  / \  ---   W
+  \.      |o o|      ./
+   |                 |
+   \    #########    /
+    \  ## ----- ##  /
+     \##         ##/
+      \_____v_____/
+Welcome to the third level.
+Here we will begin teaching about the second condition statement, the WHILE statement.
+WHILE functions similar to the IF statement where it will only execute if the statement is true.
+The fundamental difference is the while condition will keep going until the statement becomes false
+This can be tricky in programming since you can encounter endless loops if your while statement is always true
+For this exercise we have made the animals all a certain level of hungry. The conditions statement will be
+while (the animal is a hungry) do something.
+I think we are ready to give this a try.
+
+
+I will now explain some rules for this level.
+Rule 1: All sentences must begin with "Farmer John".
+Rule 2: All sentences must be at least 3 meaningful words long.
+Rule 3: After the while keyword you must repeat the animal you are using (ex: farmer john cleans the pig while the pig is clean).
+Rule 4: The goal for this level is to make sure all the animals are full using while statements.
+Rule 5: Have fun!.
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, sick, and filthy.
+The chicken is at the Farm. It is hungry, healthy, and filthy.
+The cow is at the Farm. It is hungry, sick, clean, and has milk.
+---------------------------------
+User input (type 0 to exit the level): 
+Farmer John feeds the chicken while the chicken is hungry.
+Farmer John fed the Chicken.
+The Chicken is not full yet!
+     __//
+    /.__.\
+    \ \/ /
+ '__/    \
+  \-      )
+   \_____/
+_____|_|____
+     " "
+Farmer John fed the Chicken.
+The Chicken is not full yet!
+     __//
+    /.__.\
+    \ \/ /
+ '__/    \
+  \-      )
+   \_____/
+_____|_|____
+     " "
+Farmer John fed the Chicken.
+The Chicken is now completely full!
+     __//
+    /.__.\
+    \ \/ /
+ '__/    \
+  \-      )
+   \_____/
+_____|_|____
+     " "
+The animal was very hungry! The animal was fed 3 times.
+---------------------------------
+The Farm is clean.
+Farmer John is at the Farm.
+The pig is at the Farm. It is full, sick, and filthy.
+The chicken is at the Farm. It is full, healthy, and filthy.
+The cow is at the Farm. It is hungry, sick, clean, and has milk.
+---------------------------------
+User input (type 0 to exit the level): 
+0
+Select a level by writing its number:
+Level 1: Teaches the importance of object oriented programming
+Level 2: Teaches IF conditions with objects
+Level 3: Teaches while conditions with objects
+Level 4: Brings together all of what we learned
+Press 0: to exit the game
+User input: 
+0
+I hope you enjoyed our game. Have a wonderful day!
