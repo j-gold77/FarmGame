@@ -1,4 +1,4 @@
-# COMP-354-A1
+# COMP-354-Project
 A game simulating a farm environment which accepts English input from the user
 and translates it into method calls that execute actions in the in-game farm.
 --------------------------------------------------------------------------------------------
