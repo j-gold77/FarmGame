@@ -1,6 +1,7 @@
-# COMP-354-Project
+# FarmGame
 A game simulating a farm environment which accepts English input from the user
 and translates it into method calls that execute actions in the in-game farm.
+Made for COMP354 - Section E - Group G
 --------------------------------------------------------------------------------------------
 Purpose:
 To teach young kids how to program in an object-oriented environment.
