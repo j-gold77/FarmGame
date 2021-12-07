@@ -11,16 +11,21 @@ on the basics of OOP principles, the ones the user is intended to learn, such
 as list manipulation and conditional logic.
 --------------------------------------------------------------------------------------------
 Dependencies:
-This program is written in Java.
+This program is requires Java Runtime Environment 13.0.2 
 Jupiter JUnit 5 is the testing framework.
 Eclipse IDE was used to write the code, compile, and execute it.
 --------------------------------------------------------------------------------------------
 Instructions:
-To run this program, execute the provided executable jar file called "FarmGame.jar".
+To run this program, execute the provided executable jar file called
+"FarmGame.jar": Open CMD, command prompt terminal, and write "java -jar ABSOLUTEFILEPATH",
+where ABSOLUTEFILEPATH is the absolute file path location of the file, ending with FarmGame.jar
+
 If the above does not work, use an IDE such as Eclipse and create a new project in the
 directory called "FarmGame". Then run the Driver.java file found in FarmGame/src/executor/driver.java
+
 The test cases can also be executed through an IDE such as Eclipse, all the files that
 relate to testing can be found in the FarmGame/src/test folder.
+
 If none of the above works, sample execution of each level is provided in .txt files,
 found in the Sample Output folder.
 Most of the game functionality and programming principles are demonstrated and tested
