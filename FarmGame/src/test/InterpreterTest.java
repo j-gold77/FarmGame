@@ -70,7 +70,7 @@ class InterpreterTest {
         Level level = new Level(sentence, locations, farmers, animals);
         Interpreter.interpretSentence(sentence,level);
 
-        assertEquals("Invalid Sentence: Sentences must be at least 3 words long!", outputStreamCaptor.toString().trim());
+        assertEquals("Invalid Sentence: Sentences must be at least 3 meaningful words long!", outputStreamCaptor.toString().trim());
 
     }
 
@@ -161,6 +161,13 @@ class InterpreterTest {
     @Test
 	@DisplayName("Farmer cannot nurse an already healthy animal")
 	void IntegrationAnimalAlreadyHealthy() {
+		Cow cow = new Cow();
+		assertEquals(false, cow.nurse());
+	}
+    
+    @Test
+	@DisplayName("Farmer cannot nurse an already healthy animal, go through interpreter")
+	void IntegrationAnimalAlreadyHealthyBySentence() {
 		ArrayList<Location> locationList = new ArrayList<Location>();
 		ArrayList<Farmer> farmersList = new ArrayList<Farmer>();
         ArrayList<Animal> animalsList = new ArrayList<Animal>();
@@ -170,11 +177,12 @@ class InterpreterTest {
 		animalsList.add(cow);
 		farmersList.add(sam);
 		locationList.add(barn);
-		String sentence = "Farmer Sam nurses to the Cow";
+		String sentence = "Farmer Sam nurses the Cow.";
 		Level level = new Level(sentence, locationList, farmersList, animalsList);
 		Interpreter.interpretSentence(sentence,level);
-		assertEquals(false, cow.isSick());	
+		assertEquals(false, sam.nurse(cow).success);
 	}
+    
 	@Test
 	@DisplayName("Farmer should feed animal until it's not hungry")
 	void IntegrationAnimalHungry() {
@@ -188,11 +196,11 @@ class InterpreterTest {
 		animalsList.add(cow);
 		farmersList.add(sam);
 		locationList.add(barn);
-		String sentence = "Farmer Sam feeds the Cow while it is still hungry";
+		String sentence = "Farmer Sam feeds the Cow while the cow is still hungry";
 		sentenceList.add(sentence);
 		Level level = new Level(sentence, locationList, farmersList, animalsList);
 		Interpreter.interpretSentence(sentence,level);
-		assertEquals("The animal was very hungry! The animal was fed 4 times.", outputStreamCaptor.toString().trim());	
+		assertEquals(false, cow.isHungry());	
 	}
 
 }

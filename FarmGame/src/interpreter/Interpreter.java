@@ -30,13 +30,9 @@ public class Interpreter {
         ArrayList<String> words = new ArrayList(Arrays.asList(tempWords));
 
         // Remove extra words like "the" "of" "is" "going" "to"
-        ArrayList<String> uselessWords = new ArrayList(Arrays.asList("the", "the", "of", "is", "to", "a", "in", "towards", "into", "it", "an", "by", "are", "really",
+        ArrayList<String> uselessWords = new ArrayList(Arrays.asList("the", "of", "is", "to", "a", "in", "towards", "into", "it", "an", "by", "are", "really",
                 "very", "still", "with", "their", "his", "its", "him", "hers", "he", "she", "them", "for"));
-        for (String s : words) {
-            if (uselessWords.contains(s)) {
-            	words.remove(s);
-            }
-        }
+        words.removeIf(uselessWords::contains);
 
         // Shortest valid sentence is 3 words long.
         if (words.size() < 3) {
