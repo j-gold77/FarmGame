@@ -35,7 +35,7 @@ public class Interpreter {
         words.removeIf(uselessWords::contains);
         // Shortest valid sentence is 3 words long.
         if (words.size() < 3) {
-            System.out.println("Invalid Sentence: Sentences must be at least 3 words long!");
+            System.out.println("Invalid Sentence: Sentences must be at least 3 meaningful words long!");
             return;
         }
 
